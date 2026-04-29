@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonardo Guimarães | Data Scientist</title>
+  <title>Leonardo Guimarães | AI & Data Engineer</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -37,6 +36,7 @@
       margin: 10px 0 0;
       font-weight: 300;
       font-size: 1.2em;
+      color: #e0e0e0;
     }
 
     .card {
@@ -75,14 +75,135 @@
     }
 
     .social a:hover {
-      color: #0077b5;
+      color: #1246a0;
     }
 
     .about {
       font-size: 1.1em;
       line-height: 1.7;
-      color: #555;
+      color: #444;
       text-align: left;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    .about strong {
+      color: #1246a0;
+    }
+
+    /* --- CAROUSEL STYLES --- */
+    .portfolio-section {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .portfolio-section h3 {
+      font-size: 1.5em;
+      color: #1246a0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fafafa;
+      border: 1px solid #eee;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #000; /* Fundo preto para destacar GIFs/Imagens */
+      margin-bottom: 15px;
+    }
+
+    .carousel-slide h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .carousel-slide p {
+      margin: 0;
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .carousel-tags {
+      margin-top: 10px;
+    }
+
+    .carousel-tags span {
+      display: inline-block;
+      background: #e9eff9;
+      color: #1246a0;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8em;
+      margin: 0 4px;
+      font-weight: 500;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background: rgba(18, 70, 160, 0.8);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(18, 70, 160, 1);
+    }
+
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+
+    /* --- CTA BUTTON --- */
+    .cta-btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: #1246a0;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: #0d3275;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -99,36 +220,91 @@
 
   <header>
     <h1>Leonardo Guimarães</h1>
-    <h2>Data Analyst | Data Scientist | Machine Learning | Neural Networks | LLM</h2>
-    <h2></h2>
-    <h2>.</h2>
+    <h2>AI Engineer | Python, FastAPI & Data Solutions</h2>
   </header>
 
   <main class="card">
-
-    <img src="https://guimaraestech.com.br/profile.jpeg" alt="Foto de Leonardo Guimarães" class="profile-pic">
+    <img src="https://guimaraestech.com.br/profile.jpeg" alt="Leonardo Guimarães" class="profile-pic">
 
     <div class="social">
       <a href="https://www.linkedin.com/in/leonardo-guimar%C3%A3es-189695190/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/leodejandira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="mailto:leodejandira@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.instagram.com/guimaraes_tech/?utm_source=ig_web_button_share_sheet" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 
     <p class="about">
-      Consultor em Ciência de Dados Data, Analista e Desenvolvedor Python. 
-      Atuo com <strong>Machine Learning, Large Language Models, Chatbots e soluções de IA aplicada</strong>.  
+      Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in physics and hands-on enterprise experience delivering data products for giants like IBM and Banco do Brasil, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.
       <br><br>
-      Se você ou sua empresa têm uma ideia, desafio ou projeto em Inteligência Artificial, vamos marcar uma conversa.  
-      Posso apoiar desde a concepção até a implementação de soluções que gerem valor real para o seu negócio. 
-      <br><br>
-      Não fique de fora de um mundo cada vez mais voltado para aplicações de AI.
+      Whether you need to build an AI-powered MVP from scratch, optimize a predictive pipeline, or integrate LLMs safely into your business data, I can architect and deliver the solution.
     </p>
+
+    <div class="portfolio-section">
+      <h3>Featured Projects</h3>
+      
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        
+        <div class="carousel-track">
+          
+          <div class="carousel-slide">
+            <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot Dashboard">
+            <h4>Enterprise RAG Chatbot</h4>
+            <p>A high-performance chatbot utilizing Retrieval-Augmented Generation to interact with private documents securely. Features JWT authentication and a seamless user interface.</p>
+            <div class="carousel-tags">
+              <span>Python</span> <span>FastAPI</span> <span>VectorDB</span> <span>LLM</span>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="link_do_seu_gif_etl_aqui.gif" alt="ETL Pipeline">
+            <h4>Predictive Analytics Pipeline</h4>
+            <p>End-to-end Machine Learning pipeline (ingestion, training, monitoring) using Random Forest to classify operational anomalies and forecast trends based on IoT sensor data.</p>
+            <div class="carousel-tags">
+              <span>Scikit-Learn</span> <span>Pandas</span> <span>Spark</span>
+            </div>
+          </div>
+
+        </div>
+        
+        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="mailto:leodejandira@gmail.com" class="cta-btn">Let's Build Your Next AI Feature</a>
+      </div>
+    </div>
   </main>
 
   <footer>
-    © 2025 Leonardo Guimarães - Consultoria em Ciência de Dados & AI
+    © 2026 Leonardo Guimarães - AI & Data Engineering Consulting
   </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      // Pega a largura exata do primeiro slide para calcular o deslocamento
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // Recalcula o tamanho se a janela for redimensionada (para funcionar bem no celular)
+    window.addEventListener('resize', updateCarousel);
+  </script>
 
 </body>
 </html>
