@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,216 +11,61 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+    /* Estilos base mantidos */
+    body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; }
+    header { background-color: #1246a0; color: #fff; text-align: center; padding: 60px 20px 180px; position: relative; }
+    header h1 { margin: 0; font-size: 2.5em; font-weight: 500; }
+    header h2 { margin: 10px 0 0; font-weight: 300; font-size: 1.2em; color: #e0e0e0; }
 
-    header {
-      background-color: #1246a0;
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px 180px; /* Ajuste feito aqui: de 140px para 180px */
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      font-weight: 500;
-    }
-
-    header h2 {
-      margin: 10px 0 0;
-      font-weight: 300;
-      font-size: 1.2em;
-      color: #e0e0e0;
-    }
-
-    .card {
-      background: #fff;
-      max-width: 800px;
-      margin: -80px auto 30px; 
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 30px 40px; 
-      position: relative;
-      z-index: 1;
-    }
-
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      object-fit: cover;
-      margin-top: -110px; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .social {
-      margin-top: 20px; 
-      margin-bottom: 30px;
-    }
-
-    .social a {
-      color: #555;
-      margin: 0 15px;
-      font-size: 24px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .social a:hover {
-      color: #1246a0;
-    }
-
-    .about {
-      font-size: 1.1em;
-      line-height: 1.7;
-      color: #444;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 20px;
-    }
-
-    .about strong {
-      color: #1246a0;
-    }
-
-    /* --- CAROUSEL STYLES --- */
-    .portfolio-section {
-      margin-top: 30px;
-      text-align: left;
-    }
-
-    .portfolio-section h3 {
-      font-size: 1.5em;
-      color: #1246a0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #fafafa;
-      border: 1px solid #eee;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.4s ease-in-out;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      max-height: 350px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: transparent; 
-      margin-bottom: 15px;
-    }
-
-    .carousel-slide h4 {
-      margin: 0 0 10px 0;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .carousel-slide p {
-      margin: 0;
-      color: #666;
-      font-size: 0.95em;
-      line-height: 1.5;
-    }
-
-    .carousel-tags {
-      margin-top: 10px;
-    }
-
-    .carousel-tags span {
-      display: inline-block;
-      background: #e9eff9;
-      color: #1246a0;
-      padding: 4px 10px;
-      border-radius: 15px;
-      font-size: 0.8em;
-      margin: 0 4px;
-      font-weight: 500;
-    }
-
-    .carousel-btn {
+    /* Estilo do Botão de Idioma */
+    .lang-switch {
       position: absolute;
-      top: 40%;
-      transform: translateY(-50%);
-      background: rgba(18, 70, 160, 0.8);
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 18px;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s;
-    }
-
-    .carousel-btn:hover {
-      background: rgba(18, 70, 160, 1);
-    }
-
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-
-    /* --- CTA BUTTON --- */
-    .cta-btn {
-      display: inline-block;
-      margin-top: 30px;
-      background: #1246a0;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #fff;
       color: #fff;
-      padding: 12px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .cta-btn:hover {
-      background: #0d3275;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
       font-size: 0.9em;
-      background: #e9e9e9;
-      color: #555;
-      margin-top: 40px;
+      transition: all 0.3s;
+      z-index: 100;
     }
+    .lang-switch:hover { background: #fff; color: #1246a0; }
+
+    .card { background: #fff; max-width: 800px; margin: -80px auto 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; padding: 30px 40px; position: relative; z-index: 1; }
+    .profile-pic { width: 160px; height: 160px; border-radius: 50%; border: 5px solid #fff; object-fit: cover; margin-top: -110px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    .social { margin-top: 20px; margin-bottom: 30px; }
+    .social a { color: #555; margin: 0 15px; font-size: 24px; text-decoration: none; transition: color 0.3s ease; }
+    .social a:hover { color: #1246a0; }
+
+    .about { font-size: 1.1em; line-height: 1.7; color: #444; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+    .about strong { color: #1246a0; }
+
+    .portfolio-section { margin-top: 30px; text-align: left; }
+    .portfolio-section h3 { font-size: 1.5em; color: #1246a0; margin-bottom: 20px; text-align: center; }
+
+    .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #fafafa; border: 1px solid #eee; }
+    .carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
+    .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center; }
+    .carousel-slide img { width: 100%; max-height: 350px; object-fit: contain; border-radius: 6px; background: transparent; margin-bottom: 15px; }
+    .carousel-slide h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #333; }
+    .carousel-slide p { margin: 0; color: #666; font-size: 0.95em; line-height: 1.5; }
+
+    .cta-btn { display: inline-block; margin-top: 30px; background: #1246a0; color: #fff; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.2s; }
+    .cta-btn:hover { background: #0d3275; transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 20px; font-size: 0.9em; background: #e9e9e9; color: #555; margin-top: 40px; }
   </style>
 </head>
 <body>
 
+  <button class="lang-switch" id="langBtn">English</button>
+
   <header>
     <h1>Leonardo Guimarães</h1>
-    <h2>AI Engineer | Python, FastAPI & Data Solutions</h2>
+    <h2 id="tagline" data-pt="Engenheiro de IA | Python, FastAPI e Soluções de Dados" data-en="AI Engineer | Python, FastAPI & Data Solutions">Engenheiro de IA | Python, FastAPI e Soluções de Dados</h2>
   </header>
 
   <main class="card">
@@ -232,54 +77,75 @@
       <a href="mailto:leodejandira@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
 
-    <p class="about">
-      Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in physics and hands-on enterprise experience delivering data products for giants like <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.
-      <br><br>
-      Whether you need to build an AI-powered MVP from scratch, optimize a predictive pipeline, or integrate LLMs safely into your business data, I can architect and deliver the solution.
-    </p>
+    <p class="about" id="aboutText">
+      </p>
 
     <div class="portfolio-section">
-      <h3>Featured Projects</h3>
+      <h3 id="projectsTitle" data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</h3>
       
       <div class="carousel-container">
-        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn prev-btn" style="position: absolute; left: 10px; top: 50%; z-index: 10;"><i class="fas fa-chevron-left"></i></button>
         
         <div class="carousel-track">
-          
           <div class="carousel-slide">
-            <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot Dashboard">
-            <h4>Enterprise RAG Chatbot</h4>
-            <p>A high-performance chatbot utilizing Retrieval-Augmented Generation to interact with private documents securely. Features JWT authentication and a seamless user interface.</p>
-            <div class="carousel-tags">
-              <span>Python</span> <span>FastAPI</span> <span>VectorDB</span> <span>LLM</span>
-            </div>
+            <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot">
+            <h4 data-pt="Chatbot RAG Corporativo" data-en="Enterprise RAG Chatbot">Chatbot RAG Corporativo</h4>
+            <p data-pt="Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura." data-en="A high-performance chatbot utilizing RAG to interact with private documents securely.">Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura.</p>
           </div>
 
           <div class="carousel-slide">
-            <img src="link_do_seu_gif_etl_aqui.gif" alt="Time Series Pipeline">
-            <h4>Time Series Prediction Interface</h4>
-            <p>A robust interface for control data ingestion and time series prediction, enabling automated forecasting and trend analysis for complex operational processes.</p>
-            <div class="carousel-tags">
-              <span>Machine Learning</span> <span>Data Ingestion</span> <span>Python</span>
-            </div>
+            <img src="link_do_seu_gif_etl_aqui.gif" alt="Time Series">
+            <h4 data-pt="Interface de Predição de Séries Temporais" data-en="Time Series Prediction Interface">Interface de Predição de Séries Temporais</h4>
+            <p data-pt="Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos." data-en="Robust interface for control data ingestion and time series prediction for complex processes.">Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos.</p>
           </div>
-
         </div>
         
-        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        <button class="carousel-btn next-btn" style="position: absolute; right: 10px; top: 50%; z-index: 10;"><i class="fas fa-chevron-right"></i></button>
       </div>
 
       <div style="text-align: center;">
-        <a href="mailto:leodejandira@gmail.com" class="cta-btn">Let's Build Your Next AI Feature</a>
+        <a href="mailto:leodejandira@gmail.com" class="cta-btn" id="ctaBtn" data-pt="Vamos Construir Sua Próxima Solução de IA" data-en="Let's Build Your Next AI Feature">Vamos Construir Sua Próxima Solução de IA</a>
       </div>
     </div>
   </main>
 
-  <footer>
-    © 2026 Leonardo Guimarães - AI & Data Engineering Consulting
+  <footer id="footerText" data-pt="© 2026 Leonardo Guimarães - Consultoria em Engenharia de IA e Dados" data-en="© 2026 Leonardo Guimarães - AI & Data Engineering Consulting">
+    © 2026 Leonardo Guimarães - Consultoria em Engenharia de IA e Dados
   </footer>
 
   <script>
+    const langBtn = document.getElementById('langBtn');
+    let currentLang = 'pt';
+
+    const translations = {
+      about: {
+        pt: `Olá, sou o Leo. Ajudo empresas a transformar dados brutos em sistemas inteligentes e automatizados. Com uma forte base matemática vinda da <strong>Física</strong> e experiência prática corporativa na <strong>IBM</strong>, sou especialista em <strong>IA Generativa, arquiteturas RAG personalizadas e engenharia de backend de alta performance</strong>.<br><br>Se você precisa de um MVP de IA do zero, otimizar um pipeline preditivo ou integrar LLMs com segurança, eu posso arquitetar e entregar a solução.`,
+        en: `Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in <strong>Physics</strong> and hands-on enterprise experience delivering data products for <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.<br><br>Whether you need an AI-powered MVP from scratch, to optimize a predictive pipeline, or to integrate LLMs safely, I can architect and deliver the solution.`
+      }
+    };
+
+    function updateLanguage() {
+      // Atualiza textos simples via data-attributes
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${currentLang}`);
+      });
+
+      // Atualiza o parágrafo "About" que tem HTML (strong)
+      document.getElementById('aboutText').innerHTML = translations.about[currentLang];
+
+      // Atualiza o botão
+      langBtn.innerText = currentLang === 'pt' ? 'English' : 'Português';
+    }
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      updateLanguage();
+    });
+
+    // Inicializa a página
+    updateLanguage();
+
+    // Lógica do Carrossel (mantida)
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.next-btn');
@@ -303,6 +169,5 @@
 
     window.addEventListener('resize', updateCarousel);
   </script>
-
 </body>
 </html>
