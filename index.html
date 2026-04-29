@@ -22,7 +22,7 @@
       background-color: #1246a0;
       color: #fff;
       text-align: center;
-      padding: 80px 20px 140px; 
+      padding: 80px 20px 180px; /* Ajuste feito aqui: de 140px para 180px */
       position: relative;
     }
 
@@ -130,7 +130,7 @@
       max-height: 350px;
       object-fit: contain;
       border-radius: 6px;
-      background: #000; /* Fundo preto para destacar GIFs/Imagens */
+      background: transparent; 
       margin-bottom: 15px;
     }
 
@@ -233,7 +233,7 @@
     </div>
 
     <p class="about">
-      Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in physics and hands-on enterprise experience delivering data products for giants like IBM and Banco do Brasil, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.
+      Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in physics and hands-on enterprise experience delivering data products for giants like <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.
       <br><br>
       Whether you need to build an AI-powered MVP from scratch, optimize a predictive pipeline, or integrate LLMs safely into your business data, I can architect and deliver the solution.
     </p>
@@ -256,11 +256,11 @@
           </div>
 
           <div class="carousel-slide">
-            <img src="link_do_seu_gif_etl_aqui.gif" alt="ETL Pipeline">
-            <h4>Predictive Analytics Pipeline</h4>
-            <p>End-to-end Machine Learning pipeline (ingestion, training, monitoring) using Random Forest to classify operational anomalies and forecast trends based on IoT sensor data.</p>
+            <img src="link_do_seu_gif_etl_aqui.gif" alt="Time Series Pipeline">
+            <h4>Time Series Prediction Interface</h4>
+            <p>A robust interface for control data ingestion and time series prediction, enabling automated forecasting and trend analysis for complex operational processes.</p>
             <div class="carousel-tags">
-              <span>Scikit-Learn</span> <span>Pandas</span> <span>Spark</span>
+              <span>Machine Learning</span> <span>Data Ingestion</span> <span>Python</span>
             </div>
           </div>
 
@@ -287,7 +287,6 @@
     let currentIndex = 0;
 
     function updateCarousel() {
-      // Pega a largura exata do primeiro slide para calcular o deslocamento
       const slideWidth = slides[0].getBoundingClientRect().width;
       track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
     }
@@ -302,7 +301,6 @@
       updateCarousel();
     });
 
-    // Recalcula o tamanho se a janela for redimensionada (para funcionar bem no celular)
     window.addEventListener('resize', updateCarousel);
   </script>
 
