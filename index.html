@@ -11,13 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    /* Estilos base mantidos */
+    /* Estilos base */
     body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; }
     header { background-color: #1246a0; color: #fff; text-align: center; padding: 60px 20px 180px; position: relative; }
     header h1 { margin: 0; font-size: 2.5em; font-weight: 500; }
     header h2 { margin: 10px 0 0; font-weight: 300; font-size: 1.2em; color: #e0e0e0; }
 
-    /* Estilo do Botão de Idioma */
     .lang-switch {
       position: absolute;
       top: 20px;
@@ -40,18 +39,30 @@
     .social a { color: #555; margin: 0 15px; font-size: 24px; text-decoration: none; transition: color 0.3s ease; }
     .social a:hover { color: #1246a0; }
 
-    .about { font-size: 1.1em; line-height: 1.7; color: #444; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+    .about { font-size: 1.1em; line-height: 1.7; color: #444; text-align: justify; border-bottom: 1px solid #eee; padding-bottom: 20px; }
     .about strong { color: #1246a0; }
 
     .portfolio-section { margin-top: 30px; text-align: left; }
-    .portfolio-section h3 { font-size: 1.5em; color: #1246a0; margin-bottom: 20px; text-align: center; }
 
+    /* Tabs */
+    .tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
+    .tab-btn { background: #f0f0f0; border: 1px solid #ddd; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 500; color: #666; transition: all 0.3s; }
+    .tab-btn.active { background: #1246a0; color: #fff; border-color: #1246a0; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Carrossel */
     .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #fafafa; border: 1px solid #eee; }
     .carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
     .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center; }
-    .carousel-slide img { width: 100%; max-height: 350px; object-fit: contain; border-radius: 6px; background: transparent; margin-bottom: 15px; }
+    .carousel-slide img { width: 100%; max-height: 450px; object-fit: contain; border-radius: 6px; background: transparent; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .carousel-slide h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #333; }
     .carousel-slide p { margin: 0; color: #666; font-size: 0.95em; line-height: 1.5; }
+
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: 1px solid #ddd; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; color: #1246a0; z-index: 10; transition: all 0.2s; }
+    .carousel-btn:hover { background: #1246a0; color: #fff; }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
 
     .cta-btn { display: inline-block; margin-top: 30px; background: #1246a0; color: #fff; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.2s; }
     .cta-btn:hover { background: #0d3275; transform: translateY(-2px); }
@@ -77,30 +88,56 @@
       <a href="mailto:leodejandira@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
 
-    <p class="about" id="aboutText">
-      </p>
+    <p class="about" id="aboutText"></p>
 
     <div class="portfolio-section">
-      <h3 id="projectsTitle" data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</h3>
       
-      <div class="carousel-container">
-        <button class="carousel-btn prev-btn" style="position: absolute; left: 10px; top: 50%; z-index: 10;"><i class="fas fa-chevron-left"></i></button>
-        
-        <div class="carousel-track">
-          <div class="carousel-slide">
-            <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot">
-            <h4 data-pt="Chatbot RAG Corporativo" data-en="Enterprise RAG Chatbot">Chatbot RAG Corporativo</h4>
-            <p data-pt="Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura." data-en="A high-performance chatbot utilizing RAG to interact with private documents securely.">Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura.</p>
-          </div>
+      <div class="tab-container">
+        <button class="tab-btn active" onclick="switchTab('portfolio')" data-pt="Portfólio" data-en="Portfolio">Portfólio</button>
+        <button class="tab-btn" onclick="switchTab('resume')" data-pt="Currículo" data-en="Resume">Currículo</button>
+      </div>
 
-          <div class="carousel-slide">
-            <img src="link_do_seu_gif_etl_aqui.gif" alt="Time Series">
-            <h4 data-pt="Interface de Predição de Séries Temporais" data-en="Time Series Prediction Interface">Interface de Predição de Séries Temporais</h4>
-            <p data-pt="Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos." data-en="Robust interface for control data ingestion and time series prediction for complex processes.">Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos.</p>
+      <div id="tab-portfolio" class="tab-content active">
+        <div class="carousel-container" id="carousel-portfolio">
+          <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot">
+              <h4 data-pt="Chatbot RAG Corporativo" data-en="Enterprise RAG Chatbot">Chatbot RAG Corporativo</h4>
+              <p data-pt="Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura." data-en="A high-performance chatbot utilizing RAG to interact with private documents securely.">Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="etl-demo.gif" alt="Time Series">
+              <h4 data-pt="Interface de Predição de Séries Temporais" data-en="Time Series Prediction Interface">Interface de Predição de Séries Temporais</h4>
+              <p data-pt="Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos." data-en="Robust interface for control data ingestion and time series prediction for complex processes.">Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos.</p>
+            </div>
           </div>
+          <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
-        
-        <button class="carousel-btn next-btn" style="position: absolute; right: 10px; top: 50%; z-index: 10;"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <div id="tab-resume" class="tab-content">
+        <div class="carousel-container" id="carousel-resume">
+          <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="cv-p1.jpg" data-pt-src="cv-p1.jpg" data-en-src="cv-eng-p1.jpg" alt="Página 1 Currículo">
+              <h4 data-pt="Perfil & Educação" data-en="Profile & Education">Perfil & Educação</h4>
+              <p data-pt="Resumo profissional e formação acadêmica em Física (IFSP) e ADS." data-en="Professional summary and academic background in Physics (IFSP) and ADS.">Resumo profissional e formação acadêmica em Física (IFSP) e ADS.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="cv-p2.jpg" data-pt-src="cv-p2.jpg" data-en-src="cv-eng-p2.jpg" alt="Página 2 Currículo">
+              <h4 data-pt="Experiência Profissional" data-en="Professional Experience">Experiência Profissional</h4>
+              <p data-pt="Trajetória na IBM com foco em Ciência de Dados e Engenharia de Machine Learning." data-en="Trajectory at IBM focused on Data Science and Machine Learning Engineering.">Trajetória na IBM com foco em Ciência de Dados e Engenharia de Machine Learning.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="cv-p3.jpg" data-pt-src="cv-p3.jpg" data-en-src="cv-eng-p3.jpg" alt="Página 3 Currículo">
+              <h4 data-pt="Certificações & Projetos" data-en="Certifications & Projects">Certificações & Projetos</h4>
+              <p data-pt="Especialista watsonx, Azure AI e projetos de inovação em mineração e RH." data-en="watsonx Specialist, Azure AI, and innovation projects in mining and HR.">Especialista watsonx, Azure AI e projetos de inovação em mineração e RH.</p>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
       </div>
 
       <div style="text-align: center;">
@@ -119,21 +156,23 @@
 
     const translations = {
       about: {
-        pt: `Olá, sou o Leo. Ajudo empresas a transformar dados brutos em sistemas inteligentes e automatizados. Com uma forte base matemática vinda da <strong>Física</strong> e experiência prática corporativa na <strong>IBM</strong>, sou especialista em <strong>IA Generativa, arquiteturas RAG personalizadas e engenharia de backend de alta performance</strong>.<br><br>Se você precisa de um MVP de IA do zero, otimizar um pipeline preditivo ou integrar LLMs com segurança, eu posso arquitetar e entregar a solução.`,
-        en: `Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in <strong>Physics</strong> and hands-on enterprise experience delivering data products for <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>.<br><br>Whether you need an AI-powered MVP from scratch, to optimize a predictive pipeline, or to integrate LLMs safely, I can architect and deliver the solution.`
+        pt: `Olá, sou o Leo. Ajudo empresas a transformar dados brutos em sistemas inteligentes e automatizados. Com uma forte base matemática vinda da <strong>Física</strong> e experiência prática corporativa na <strong>IBM</strong>, sou especialista em <strong>IA Generativa, arquiteturas RAG personalizadas e engenharia de backend de alta performance</strong>. Se você precisa de um MVP de IA do zero, otimizar um pipeline preditivo ou integrar LLMs com segurança, eu posso arquitetar e entregar a solução.`,
+        en: `Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in <strong>Physics</strong> and hands-on enterprise experience delivering data products for <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>. Whether you need an AI-powered MVP from scratch, to optimize a predictive pipeline, or to integrate LLMs safely, I can architect and deliver the solution.`
       }
     };
 
     function updateLanguage() {
-      // Atualiza textos simples via data-attributes
+      // Atualiza textos
       document.querySelectorAll('[data-pt]').forEach(el => {
         el.innerText = el.getAttribute(`data-${currentLang}`);
       });
 
-      // Atualiza o parágrafo "About" que tem HTML (strong)
-      document.getElementById('aboutText').innerHTML = translations.about[currentLang];
+      // Atualiza fontes das imagens (Currículo)
+      document.querySelectorAll('[data-pt-src]').forEach(img => {
+        img.src = img.getAttribute(`data-${currentLang}-src`);
+      });
 
-      // Atualiza o botão
+      document.getElementById('aboutText').innerHTML = translations.about[currentLang];
       langBtn.innerText = currentLang === 'pt' ? 'English' : 'Português';
     }
 
@@ -142,32 +181,45 @@
       updateLanguage();
     });
 
-    // Inicializa a página
-    updateLanguage();
-
-    // Lógica do Carrossel (mantida)
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.next-btn');
-    const prevButton = document.querySelector('.prev-btn');
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+      const track = document.querySelector('#tab-' + tabName + ' .carousel-track');
+      track.style.transform = 'translateX(0)';
     }
 
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    });
+    updateLanguage();
 
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
+    function setupCarousel(containerId) {
+      const container = document.getElementById(containerId);
+      const track = container.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextBtn = container.querySelector('.next-btn');
+      const prevBtn = container.querySelector('.prev-btn');
+      let currentIndex = 0;
 
-    window.addEventListener('resize', updateCarousel);
+      function update() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        update();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        update();
+      });
+
+      window.addEventListener('resize', update);
+    }
+
+    setupCarousel('carousel-portfolio');
+    setupCarousel('carousel-resume');
   </script>
 </body>
 </html>
