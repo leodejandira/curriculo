@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonardo Guimarães | AI & Data Engineer</title>
+  <title>Leonardo Guimarães | Especialista em IA e Dados</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,63 +11,65 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    /* Estilos base */
     body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; }
-    header { background-color: #1246a0; color: #fff; text-align: center; padding: 60px 20px 180px; position: relative; }
-    header h1 { margin: 0; font-size: 2.5em; font-weight: 500; }
-    header h2 { margin: 10px 0 0; font-weight: 300; font-size: 1.2em; color: #e0e0e0; }
+    
+    header { background-color: #0f367a; background-image: linear-gradient(to right, #0f367a, #1a56bc); color: #fff; text-align: center; padding: 60px 20px 180px; position: relative; }
+    header h1 { margin: 0; font-size: 2.8em; font-weight: 700; letter-spacing: -1px; }
+    header h2 { margin: 15px auto 0; font-weight: 300; font-size: 1.4em; color: #e0e0e0; max-width: 600px; line-height: 1.4; }
 
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9em;
-      transition: all 0.3s;
-      z-index: 100;
-    }
-    .lang-switch:hover { background: #fff; color: #1246a0; }
+    .lang-switch { position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); color: #fff; padding: 8px 18px; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: all 0.3s; z-index: 100; font-weight: 500; }
+    .lang-switch:hover { background: #fff; color: #1246a0; border-color: #fff; }
 
-    .card { background: #fff; max-width: 800px; margin: -80px auto 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; padding: 30px 40px; position: relative; z-index: 1; }
-    .profile-pic { width: 160px; height: 160px; border-radius: 50%; border: 5px solid #fff; object-fit: cover; margin-top: -110px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    .social { margin-top: 20px; margin-bottom: 30px; }
-    .social a { color: #555; margin: 0 15px; font-size: 24px; text-decoration: none; transition: color 0.3s ease; }
-    .social a:hover { color: #1246a0; }
+    .card { background: #fff; max-width: 900px; margin: -100px auto 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); text-align: center; padding: 40px; position: relative; z-index: 1; }
+    .profile-pic { width: 170px; height: 170px; border-radius: 50%; border: 6px solid #fff; object-fit: cover; margin-top: -125px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+    
+    .social { margin-top: 20px; margin-bottom: 20px; }
+    .social a { color: #666; margin: 0 15px; font-size: 26px; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+    .social a:hover { color: #1246a0; transform: translateY(-3px); }
 
-    .about { font-size: 1.1em; line-height: 1.7; color: #444; text-align: justify; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-    .about strong { color: #1246a0; }
+    .main-cta { display: inline-block; margin-bottom: 35px; background: #1246a0; color: #fff; padding: 14px 35px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1em; transition: background 0.3s, transform 0.2s; box-shadow: 0 4px 15px rgba(18, 70, 160, 0.3); }
+    .main-cta:hover { background: #0b2b63; transform: translateY(-3px); }
 
-    .portfolio-section { margin-top: 30px; text-align: left; }
+    .about { font-size: 1.15em; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 30px; }
+    .about strong { color: #1246a0; font-weight: 700; }
 
-    /* Tabs */
-    .tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
-    .tab-btn { background: #f0f0f0; border: 1px solid #ddd; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 500; color: #666; transition: all 0.3s; }
-    .tab-btn.active { background: #1246a0; color: #fff; border-color: #1246a0; }
+    /* NOVO: Tech Stack Visual inspirado na Cubo BPM */
+    .tech-stack { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 35px; }
+    .tech-badge { background: #f0f4f8; color: #1246a0; padding: 8px 18px; border-radius: 20px; font-size: 0.9em; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid #dce4ec; }
+
+    /* NOVO: Pilares de Soluções inspirados na Cubo BPM */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; text-align: left; }
+    .feature-card { background: #fff; border: 1px solid #eaeaea; padding: 25px; border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; border-left: 4px solid #1246a0; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .feature-card i { font-size: 2em; color: #1246a0; margin-bottom: 15px; }
+    .feature-card h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #222; }
+    .feature-card p { margin: 0; font-size: 0.95em; color: #666; line-height: 1.5; }
+
+    .portfolio-section { margin-top: 40px; text-align: left; }
+
+    .tab-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+    .tab-btn { background: #f8f9fa; border: 2px solid #e9ecef; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: 600; color: #555; transition: all 0.3s; font-size: 1em; }
+    .tab-btn.active { background: #1246a0; color: #fff; border-color: #1246a0; box-shadow: 0 4px 10px rgba(18, 70, 160, 0.2); }
     .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Carrossel */
-    .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #fafafa; border: 1px solid #eee; }
-    .carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
-    .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center; }
-    .carousel-slide img { width: 100%; max-height: 450px; object-fit: contain; border-radius: 6px; background: transparent; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .carousel-slide h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #333; }
-    .carousel-slide p { margin: 0; color: #666; font-size: 0.95em; line-height: 1.5; }
+    .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: 10px; background: #fff; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 30px; text-align: center; }
+    .carousel-slide img { width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .carousel-slide h4 { margin: 0 0 12px 0; font-size: 1.3em; color: #222; font-weight: 700; }
+    .carousel-slide p { margin: 0 auto; color: #555; font-size: 1em; line-height: 1.6; max-width: 90%; }
 
-    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: 1px solid #ddd; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; color: #1246a0; z-index: 10; transition: all 0.2s; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; color: #1246a0; z-index: 10; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-size: 1.2em; }
     .carousel-btn:hover { background: #1246a0; color: #fff; }
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
+    .prev-btn { left: 15px; }
+    .next-btn { right: 15px; }
 
-    .cta-btn { display: inline-block; margin-top: 30px; background: #1246a0; color: #fff; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s, transform 0.2s; }
-    .cta-btn:hover { background: #0d3275; transform: translateY(-2px); }
+    .cta-btn { display: inline-block; margin-top: 40px; background: #1246a0; color: #fff; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 4px 15px rgba(18, 70, 160, 0.3); }
+    .cta-btn:hover { background: #0b2b63; transform: translateY(-3px); }
 
-    footer { text-align: center; padding: 20px; font-size: 0.9em; background: #e9e9e9; color: #555; margin-top: 40px; }
+    footer { text-align: center; padding: 30px 20px; font-size: 0.9em; background: #222; color: #aaa; margin-top: 50px; }
   </style>
 </head>
 <body>
@@ -76,8 +78,11 @@
 
   <header>
     <h1>Leonardo Guimarães</h1>
-    <h2 id="tagline" data-pt="Engenheiro de IA | Python, FastAPI e Soluções de Dados" data-en="AI Engineer | Python, FastAPI & Data Solutions">Engenheiro de IA | Python, FastAPI e Soluções de Dados</h2>
+    <h2 id="tagline" data-pt="Soluções de IA e Dados para impulsionar a eficiência e os resultados do seu negócio." data-en="AI and Data solutions to boost your business efficiency and results.">Soluções de IA e Dados para impulsionar a eficiência e os resultados do seu negócio.</h2>
   </header>
+  <div class="social">
+    <h6>. </h6>
+  </div>
 
   <main class="card">
     <img src="https://guimaraestech.com.br/profile.jpeg" alt="Leonardo Guimarães" class="profile-pic">
@@ -88,52 +93,88 @@
       <a href="mailto:leodejandira@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
 
+    <!-- BOTÃO CTA PRINCIPAL -->
+    <!-- <a href="https://wa.me/5511941737889?text=Olá Leonardo, visitei seu site e gostaria de saber mais sobre as soluções de IA." target="_blank" class="main-cta" id="mainCtaBtn" data-pt="Transforme Seus Dados em Resultados Agora" data-en="Turn Your Data Into Results Now">
+      Transforme Seus Dados em Resultados Agora
+    </a> -->
+
+    <!-- TEXTO DE AUTORIDADE -->
     <p class="about" id="aboutText"></p>
+
+    <!-- NOVO: TECH STACK (Autoridade Visual) -->
+    <div class="tech-stack">
+      <div class="tech-badge"><i class="fab fa-python"></i> Python & FastAPI</div>
+      <div class="tech-badge"><i class="fas fa-database"></i> SQL & Banco de Dados</div>
+      <div class="tech-badge"><i class="fas fa-robot"></i> Machine Learning</div>
+      <div class="tech-badge"><i class="fas fa-cloud"></i> Azure AI & watsonx</div>
+      <div class="tech-badge"><i class="fas fa-project-diagram"></i> Arquitetura RAG</div>
+    </div>
+
+    <!-- NOVO: PILARES DE SOLUÇÃO (Inspirado na Cubo BPM) -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h4 data-pt="Decisões Inteligentes" data-en="Intelligent Decisions">Decisões Inteligentes</h4>
+        <p data-pt="Extraia valor real dos seus dados operacionais com análises preditivas precisas." data-en="Extract real value from your operational data with precise predictive analytics.">Extraia valor real dos seus dados operacionais com análises preditivas precisas.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-cogs"></i>
+        <h4 data-pt="Automação de Pipelines" data-en="Pipeline Automation">Automação de Pipelines</h4>
+        <p data-pt="Eficiência na ingestão e tratamento de grandes volumes de dados (ETL) reduzindo custos." data-en="Efficiency in ingesting and processing large volumes of data (ETL) reducing costs.">Eficiência na ingestão e tratamento de grandes volumes de dados (ETL) reduzindo custos.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-microchip"></i>
+        <h4 data-pt="IA Generativa" data-en="Generative AI">IA Generativa</h4>
+        <p data-pt="Assistentes RAG customizados que interagem com o conhecimento privado da sua empresa." data-en="Custom RAG assistants that interact with your company's private knowledge.">Assistentes RAG customizados que interagem com o conhecimento privado da sua empresa.</p>
+      </div>
+    </div>
 
     <div class="portfolio-section">
       
       <div class="tab-container">
-        <button class="tab-btn active" onclick="switchTab('portfolio')" data-pt="Portfólio" data-en="Portfolio">Portfólio</button>
-        <button class="tab-btn" onclick="switchTab('resume')" data-pt="Currículo" data-en="Resume">Currículo</button>
+        <button class="tab-btn active" onclick="switchTab('portfolio')" data-pt="Projetos & Casos de Uso" data-en="Projects & Use Cases">Projetos & Casos de Uso</button>
+        <button class="tab-btn" onclick="switchTab('resume')" data-pt="Trajetória & Skills" data-en="Path & Skills">Trajetória IBM & Skills</button>
       </div>
 
+      <!-- PORTFÓLIO -->
       <div id="tab-portfolio" class="tab-content active">
         <div class="carousel-container" id="carousel-portfolio">
           <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
           <div class="carousel-track">
             <div class="carousel-slide">
               <img src="link_do_seu_gif_rag_aqui.gif" alt="RAG Chatbot">
-              <h4 data-pt="Chatbot RAG Corporativo" data-en="Enterprise RAG Chatbot">Chatbot RAG Corporativo</h4>
-              <p data-pt="Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura." data-en="A high-performance chatbot utilizing RAG to interact with private documents securely.">Um chatbot de alta performance que utiliza RAG para interagir com documentos privados de forma segura.</p>
+              <h4 data-pt="Automação com Chatbots RAG" data-en="Automation with RAG Chatbots">Automação com Chatbots RAG</h4>
+              <p data-pt="Implemente assistentes inteligentes que respondem dúvidas da sua equipe usando os documentos internos da sua própria empresa." data-en="Implement smart assistants that answer your team's questions using your company's own internal documents.">Implemente assistentes inteligentes que respondem dúvidas da sua equipe usando os documentos internos da sua própria empresa.</p>
             </div>
             <div class="carousel-slide">
               <img src="etl-demo.gif" alt="Time Series">
-              <h4 data-pt="Interface de Predição de Séries Temporais" data-en="Time Series Prediction Interface">Interface de Predição de Séries Temporais</h4>
-              <p data-pt="Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos." data-en="Robust interface for control data ingestion and time series prediction for complex processes.">Interface robusta para ingestão de dados de controle e predição de séries temporais para processos complexos.</p>
+              <h4 data-pt="Interfaces de Predição" data-en="Prediction Interfaces">Interfaces de Predição</h4>
+              <p data-pt="Preveja tendências operacionais e automatize o tratamento de grandes volumes de dados para processos complexos." data-en="Predict operational trends and automate the handling of large data volumes for complex processes.">Preveja tendências operacionais e automatize o tratamento de grandes volumes de dados para processos complexos.</p>
             </div>
           </div>
           <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
 
+      <!-- CURRÍCULO -->
       <div id="tab-resume" class="tab-content">
         <div class="carousel-container" id="carousel-resume">
           <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
           <div class="carousel-track">
             <div class="carousel-slide">
               <img src="cv-p1.jpg" data-pt-src="cv-p1.jpg" data-en-src="cv-eng-p1.jpg" alt="Página 1 Currículo">
-              <h4 data-pt="Perfil & Educação" data-en="Profile & Education">Perfil & Educação</h4>
-              <p data-pt="Resumo profissional e formação acadêmica em Física (IFSP) e ADS." data-en="Professional summary and academic background in Physics (IFSP) and ADS.">Resumo profissional e formação acadêmica em Física (IFSP) e ADS.</p>
+              <h4 data-pt="Perfil & Formação Sólida" data-en="Profile & Solid Background">Perfil & Formação Sólida</h4>
+              <p data-pt="Base analítica afiada na Licenciatura em Física (IFSP) aplicada ao desenvolvimento de software." data-en="Analytical base sharpened in Physics degree (IFSP) applied to software development.">Base analítica afiada na Licenciatura em Física (IFSP) aplicada ao desenvolvimento de software.</p>
             </div>
             <div class="carousel-slide">
               <img src="cv-p2.jpg" data-pt-src="cv-p2.jpg" data-en-src="cv-eng-p2.jpg" alt="Página 2 Currículo">
-              <h4 data-pt="Experiência Profissional" data-en="Professional Experience">Experiência Profissional</h4>
-              <p data-pt="Trajetória na IBM com foco em Ciência de Dados e Engenharia de Machine Learning." data-en="Trajectory at IBM focused on Data Science and Machine Learning Engineering.">Trajetória na IBM com foco em Ciência de Dados e Engenharia de Machine Learning.</p>
+              <h4 data-pt="Experiência Corporativa: IBM" data-en="Corporate Experience: IBM">Experiência Corporativa: IBM</h4>
+              <p data-pt="Atuação em projetos de escala global entregando valor preditivo para gigantes do mercado." data-en="Working on global scale projects delivering predictive value to market giants.">Atuação em projetos de escala global entregando valor preditivo para gigantes do mercado.</p>
             </div>
             <div class="carousel-slide">
               <img src="cv-p3.jpg" data-pt-src="cv-p3.jpg" data-en-src="cv-eng-p3.jpg" alt="Página 3 Currículo">
-              <h4 data-pt="Certificações & Projetos" data-en="Certifications & Projects">Certificações & Projetos</h4>
-              <p data-pt="Especialista watsonx, Azure AI e projetos de inovação em mineração e RH." data-en="watsonx Specialist, Azure AI, and innovation projects in mining and HR.">Especialista watsonx, Azure AI e projetos de inovação em mineração e RH.</p>
+              <h4 data-pt="Stack & Certificações Atuais" data-en="Current Stack & Certifications">Stack & Certificações Atuais</h4>
+              <p data-pt="Especialista certificado em ecossistemas de ponta (watsonx, Azure AI) prontos para implementação." data-en="Certified specialist in cutting-edge ecosystems (watsonx, Azure AI) ready for deployment.">Especialista certificado em ecossistemas de ponta (watsonx, Azure AI) prontos para implementação.</p>
             </div>
           </div>
           <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -141,13 +182,13 @@
       </div>
 
       <div style="text-align: center;">
-        <a href="mailto:leodejandira@gmail.com" class="cta-btn" id="ctaBtn" data-pt="Vamos Construir Sua Próxima Solução de IA" data-en="Let's Build Your Next AI Feature">Vamos Construir Sua Próxima Solução de IA</a>
+        <a href="https://wa.me/5511941737889" class="cta-btn" id="ctaBtn" target="_blank" data-pt="Vamos Construir Sua Próxima Solução de IA - Entre em contato" data-en="Let's Build Your Next AI Solution">Vamos Construir Sua Próxima Solução de IA</a>
       </div>
     </div>
   </main>
 
-  <footer id="footerText" data-pt="© 2026 Leonardo Guimarães - Consultoria em Engenharia de IA e Dados" data-en="© 2026 Leonardo Guimarães - AI & Data Engineering Consulting">
-    © 2026 Leonardo Guimarães - Consultoria em Engenharia de IA e Dados
+  <footer id="footerText" data-pt="© 2026 Leonardo Guimarães - Desenvolvedor Especialista IBM" data-en="© 2026 Leonardo Guimarães - IBM Specialist Developer">
+    © 2026 Leonardo Guimarães - Desenvolvedor Especialista 
   </footer>
 
   <script>
@@ -156,18 +197,16 @@
 
     const translations = {
       about: {
-        pt: `Olá, sou o Leo. Ajudo empresas a transformar dados brutos em sistemas inteligentes e automatizados. Com uma forte base matemática vinda da <strong>Física</strong> e experiência prática corporativa na <strong>IBM</strong>, sou especialista em <strong>IA Generativa, arquiteturas RAG personalizadas e engenharia de backend de alta performance</strong>. Se você precisa de um MVP de IA do zero, otimizar um pipeline preditivo ou integrar LLMs com segurança, eu posso arquitetar e entregar a solução.`,
-        en: `Hi, I’m Leo. I help companies turn their raw data into intelligent, automated systems. With a strong mathematical foundation in <strong>Physics</strong> and hands-on enterprise experience delivering data products for <strong>IBM</strong>, I specialize in <strong>Generative AI, custom RAG architectures, and high-performance backend engineering</strong>. Whether you need an AI-powered MVP from scratch, to optimize a predictive pipeline, or to integrate LLMs safely, I can architect and deliver the solution.`
+        pt: `Olá, sou o Leonardo. Como especialista com atuação na <strong>IBM</strong>, ajudo empresas a transformar operações engessadas em sistemas inteligentes e automatizados.<br><br>Seja criando um <strong>Chatbot RAG</strong> personalizado, estruturando pipelines de dados eficientes ou integrando APIs complexas, minha missão é entregar soluções robustas de Engenharia de Dados e Inteligência Artificial que gerem eficiência real para o seu negócio.`,
+        en: `Hi, I’m Leonardo. As a specialist with experience at <strong>IBM</strong>, I help companies transform rigid operations into intelligent, automated systems.<br><br>Whether it's building a custom <strong>RAG Chatbot</strong>, structuring efficient data pipelines, or integrating complex APIs, my mission is to deliver robust Data Engineering and AI solutions that generate real efficiency for your business.`
       }
     };
 
     function updateLanguage() {
-      // Atualiza textos
       document.querySelectorAll('[data-pt]').forEach(el => {
         el.innerText = el.getAttribute(`data-${currentLang}`);
       });
 
-      // Atualiza fontes das imagens (Currículo)
       document.querySelectorAll('[data-pt-src]').forEach(img => {
         img.src = img.getAttribute(`data-${currentLang}-src`);
       });
